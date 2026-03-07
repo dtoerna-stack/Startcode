@@ -21,10 +21,25 @@ def main():
     r1.voeg_stap_toe(Stap("Schep de spaghetti door de saus en serveer met kaas."))
 
 
-    recept2 = Recept("Gehakt quiche met paprika", "Een heerlijke quiche met gehakt en paprika.")
+     # Recept 2
+    r2 = Recept("Lasagna", "Klassieke ovenschotel met gehakt, tomatensaus en bechamelsaus.")
+    r2.voeg_ingredient_toe(Ingredient("lasagnebladen", "4"))
+    r2.voeg_ingredient_toe(Ingredient("gehakt", "150g"))
+    r2.voeg_ingredient_toe(Ingredient("tomatensaus", "150ml"))
+    r2.voeg_ingredient_toe(Ingredient("melk", "200ml"))
+    r2.voeg_ingredient_toe(Ingredient("bloem", "1 el"))
+    r2.voeg_ingredient_toe(Ingredient("boter", "1 el"))
+    r2.voeg_ingredient_toe(Ingredient("geraspte kaas", "50g"))
+    r2.voeg_ingredient_toe(Ingredient("zout en peper", "2", "snufjes"))
+    r2.voeg_stap_toe(Stap("Verwarm de oven voor op 200 graden."))
+    r2.voeg_stap_toe(Stap("Bak het gehakt rul en voeg de tomatensaus toe."))
+    r2.voeg_stap_toe(Stap("Maak de bechamelsaus: smelt boter, voeg bloem toe en roer melk erdoor tot een gladde saus."))
+    r2.voeg_stap_toe(Stap("Laag een ovenschaal in: lasagnebladen, gehaktsaus, bechamelsaus. Herhaal."))
+    r2.voeg_stap_toe(Stap("Eindig met bechamelsaus en strooi de kaas erover."))
+    r2.voeg_stap_toe(Stap("Bak 30 minuten in de oven tot de bovenkant goudbruin is."))
 
 # Lijst tonen
-    recepten = [r1]
+    recepten = [r1, r2]
 
     print("Welkom in het receptenboek!")
     print("==========================")
