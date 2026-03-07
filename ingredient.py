@@ -1,5 +1,5 @@
 class Ingredient:
-    def __init__(self, naam: str, hoeveelheid: float, eenheid: str):
+    def __init__(self, naam: str, hoeveelheid: float, eenheid: str=""):
         self.naam = naam
         self.hoeveelheid = hoeveelheid
         self.eenheid = eenheid
