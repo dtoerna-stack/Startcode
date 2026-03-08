@@ -11,6 +11,29 @@ def toon_keuzemenu():
     print("0. Exit")
     print("==========================")
 
+def toon_overzicht(recepten):
+    if len(recepten) == 0:
+        print("Er zijn nog geen recepten.")
+        return
+
+    print("\nWelkom in het receptenboek!")
+    print("==========================")
+    nummer = 1
+    for recept in recepten:
+        print(str(nummer) + ". " + recept.get_naam())
+        nummer += 1
+
+    keuze = 0
+    while keuze == 0:
+        try:
+            keuze = int(input("\nKies een recept (0 = terug): "))
+            if keuze == 0:
+                return
+            if keuze < 1 or keuze > len(recepten):
+                print("Recept niet gevonden.")
+                keuze = 0
+        except ValueError:
+            print("Foutieve invoer.")
 
 def main():
     recepten = maak_recepten()
@@ -20,7 +43,7 @@ def main():
         keuze = input("Kies een optie: ")
 
         if keuze == "1":
-            pass  # komt later
+            toon_overzicht(recepten)
         elif keuze == "2":
             pass  # komt later
         elif keuze == "0":
