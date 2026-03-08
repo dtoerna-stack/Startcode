@@ -175,7 +175,14 @@ def main():
         if keuze == "1":
             toon_overzicht(recepten)
         elif keuze == "2":
-            pass  # komt later
+            naam = input("Naam recept: ")
+            omschrijving = input("Omschrijving: ")
+            nieuw_recept = Recept(naam, omschrijving)
+            voeg_ingredienten_toe(nieuw_recept)
+            voeg_stappen_toe(nieuw_recept)
+            recepten.append(nieuw_recept)
+            print("\nRecept toegevoegd!")
+            nieuw_recept.get_plantaardig_recept(False)
         elif keuze == "0":
             print("Tot de volgende keer!")
             break
