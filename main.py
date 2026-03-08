@@ -22,6 +22,33 @@ def toon_overzicht(recepten):
     for recept in recepten:
         print(str(nummer) + ". " + recept.get_naam())
         nummer += 1
+    
+    gekozen_recept = recepten[keuze - 1]
+
+    personen = 0
+    while personen == 0:
+        try:
+            personen = int(input("Voor hoeveel personen? "))
+            if personen < 1:
+                print("Foutieve invoer.")
+                personen = 0
+        except ValueError:
+            print("Foutieve invoer.")
+
+    gekozen_recept.set_aantal_personen(personen)
+
+    plantaardig = False
+    while True:
+        antwoord = input("Plantaardig? (ja/nee): ").lower()
+        if antwoord == "ja":
+            plantaardig = True
+            break
+        elif antwoord == "nee":
+            break
+        else:
+            print("Foutieve invoer.")
+
+    gekozen_recept.get_plantaardig_recept(plantaardig)
 
     keuze = 0
     while keuze == 0:
