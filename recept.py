@@ -25,7 +25,10 @@ class Recept:
     def set_aantal_personen(self, personen):
         for ingredient in self.ingredienten:
             nieuwe_hoeveelheid = float(ingredient.get_hoeveelheid()) * personen
-            ingredient.set_hoeveelheid(str(nieuwe_hoeveelheid))
+            if nieuwe_hoeveelheid == int(nieuwe_hoeveelheid):
+                ingredient.set_hoeveelheid(str(int(nieuwe_hoeveelheid)))
+            else:
+                ingredient.set_hoeveelheid(str(nieuwe_hoeveelheid))
         self.aantal_personen = personen
 
     def get_aantal_personen(self):
