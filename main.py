@@ -139,6 +139,32 @@ def voeg_ingredienten_toe(recept):
             else:
                 print("Foutieve invoer.")
 
+def voeg_stappen_toe(recept):
+    while True:
+        beschrijving = input("Stap beschrijving: ")
+        tip = None
+
+        while True:
+            antwoord = input("Tip toevoegen? (ja/nee): ").lower()
+            if antwoord == "ja":
+                tip = input("Tip: ")
+                break
+            elif antwoord == "nee":
+                break
+            else:
+                print("Foutieve invoer.")
+
+        recept.voeg_stap_toe(Stap(beschrijving, tip))
+
+        while True:
+            antwoord = input("Nog een stap? (ja/nee): ").lower()
+            if antwoord == "ja":
+                break
+            elif antwoord == "nee":
+                return
+            else:
+                print("Foutieve invoer.")
+
 def main():
     recepten = maak_recepten()
 
